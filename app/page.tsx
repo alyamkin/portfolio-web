@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Potfolio</h1>;
+  return <h1 className="text-label-sm">Portfolio</h1>;
 }

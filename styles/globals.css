@@ -1,5 +1,92 @@
 @import 'tailwindcss';
 
 @theme inline {
-  --font-inter: var(--font-inter);
+  /* Fonts */
+  --font-sans: var(--font-inter);
+
+  /* Colors */
+  --color-background-base: #f7f7f5;
+  --color-surfaces-base: #ecece8;
+  --color-surfaces-hover: #e6e6e3;
+  --color-surfaces-active: #d1d1cd;
+  --color-surfaces-disabled: #f3f3f0;
+  --color-accent-base: #4c6ef5;
+  --color-accent-hover: #3b5bdb;
+  --color-accent-active: #365fc7;
+  --color-accent-disabled: #c7d6fb;
+  --color-accent-soft: #e7edff;
+  --color-accent-soft-hover: #dde6ff;
+  --color-text-primary: #1c1c1c;
+  --color-text-secondary: #6b6b6b;
+  --color-text-muted: #9a9a9a;
+  --color-text-disabled: #6b6b6b;
+  --color-text-accent: #3b5bdb;
+  --color-text-disabled-accent: #f8faff;
+  --color-border-base: #d1d1cd;
+  --color-border-disabled: #e6e6e3;
+  --color-border-hover: #c7c7c2;
+  --color-border-light: #ecece8;
+
+  /* Headings */
+  --text-h1: 76px;
+  --text-h1--line-height: 1.1;
+  --text-h1--font-weight: 500;
+
+  --text-h2: 60px;
+  --text-h2--line-height: 1.1;
+  --text-h2--font-weight: 500;
+
+  --text-h3: 48px;
+  --text-h3--line-height: 1.1;
+  --text-h3--font-weight: 500;
+
+  --text-h4: 38px;
+  --text-h4--line-height: 1.1;
+  --text-h4--font-weight: 500;
+
+  --text-h5: 36px;
+  --text-h5--line-height: 1.1;
+  --text-h5--font-weight: 500;
+
+  --text-h6: 24px;
+  --text-h6--line-height: 1.2;
+  --text-h6--font-weight: 500;
+
+  /* Body */
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 1.5;
+  --text-body-lg--letter-spacing: 0.25px;
+
+  --text-body: 16px;
+  --text-body--line-height: 1.5;
+  --text-body--letter-spacing: 0.25px;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.7;
+  --text-body-sm--letter-spacing: 0.5px;
+
+  /* Labels */
+  --text-label: 16px;
+  --text-label--line-height: 1.5;
+  --text-label--letter-spacing: 0.75px;
+
+  --text-label-sm: 14px;
+  --text-label-sm--line-height: 1.7;
+  --text-label-sm--letter-spacing: 0.5px;
+
+  /* Caption */
+  --text-caption: 12px;
+  --text-caption--line-height: 1.7;
+  --text-caption--letter-spacing: 0.5px;
+
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 600px;
+  --breakpoint-laptop: 900px;
+}
+
+@utility container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
