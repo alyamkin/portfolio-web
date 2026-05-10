@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 import clsx from 'clsx';
 
-export type TagVariant = 'general' | 'accent';
+export type TagVariant = 'general' | 'accent' | 'completed' | 'inProgress';
 
 type TagProps = {
   children: React.ReactNode;
@@ -11,12 +11,14 @@ type TagProps = {
 };
 
 const tagStyles = cva(
-  'inline-flex items-center justify-center rounded-md transition-colors w-auto font-medium',
+  'inline-flex items-center justify-center transition-colors w-auto font-medium',
   {
     variants: {
       variant: {
-        general: 'bg-surface-base text-text-secondary hover:bg-surface-hover',
-        accent: 'bg-accent-soft text-text-accent hover:bg-accent-soft-hover',
+        general: 'bg-surface-base text-text-secondary  hover:bg-surface-hover',
+        accent: 'bg-accent-soft text-text-accent  hover:bg-accent-soft-hover',
+        completed: 'bg-status-success-soft text-text-success rounded-full',
+        inProgress: 'bg-accent-soft text-text-accent rounded-full',
       },
       size: {
         md: 'px-2 py-1 text-caption',
