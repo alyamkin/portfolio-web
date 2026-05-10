@@ -52,16 +52,16 @@ const buttonStyles = cva(
       {
         variant: 'secondary',
         disabled: false,
-        class: 'hover:bg-surfaces-hover active:bg-surfaces-active',
+        class: 'hover:bg-surface-hover active:bg-surface-active',
       },
 
       {
         variant: 'icon',
         disabled: false,
         class: `
-          hover:bg-surfaces-hover
+          hover:bg-surface-hover
           hover:text-text-primary
-          active:bg-surfaces-active
+          active:bg-surface-active
           active:text-text-primary
         `,
       },
@@ -78,7 +78,7 @@ const buttonStyles = cva(
         class: `
           border-border-disabled
           text-text-disabled
-          bg-surfaces-disabled
+          bg-surface-disabled
         `,
       },
 
