@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="sans bg-surfaces-base">
+      <body className="sans bg-background-base">
         <div className="flex flex-col h-screen gap-6 tablet:gap-12">
           <Header />
           {children}

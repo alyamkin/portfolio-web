@@ -5,7 +5,7 @@ import SocialMediaLinks from '@/components/ui/SocialMediaLinks';
 
 const Header = () => {
   return (
-    <header className="container flex items-center justify-between py-2.5 border-b border-border-base">
+    <header className="container flex items-center justify-between py-2.5 border-b border-border-light">
       <Link href="/" className="shrink-0 focus-ring">
         <Image
           src="/images/logo.svg"
