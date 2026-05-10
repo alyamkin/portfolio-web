@@ -6,10 +6,10 @@
 
   /* Colors */
   --color-background-base: #f7f7f5;
-  --color-surfaces-base: #ecece8;
-  --color-surfaces-hover: #e6e6e3;
-  --color-surfaces-active: #d1d1cd;
-  --color-surfaces-disabled: #f3f3f0;
+  --color-surface-base: #ecece8;
+  --color-surface-hover: #e6e6e3;
+  --color-surface-active: #d1d1cd;
+  --color-surface-disabled: #f3f3f0;
   --color-accent-base: #4c6ef5;
   --color-accent-hover: #3b5bdb;
   --color-accent-active: #365fc7;
@@ -75,6 +75,10 @@
   --text-label-sm--letter-spacing: 0.5px;
 
   /* Caption */
+  --text-caption-lg: 13px;
+  --text-caption-lg--line-height: 1.7;
+  --text-caption-lg--letter-spacing: 0.5px;
+
   --text-caption: 12px;
   --text-caption--line-height: 1.7;
   --text-caption--letter-spacing: 0.5px;
