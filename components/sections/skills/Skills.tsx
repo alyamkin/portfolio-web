@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import SectionWrapper from '../SectionWrapper';
+import SectionWrapper from '@/components/sections/SectionWrapper';
 import Tag from '@/components/ui/Tag';
 import skills from './data';
 

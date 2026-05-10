@@ -8,7 +8,7 @@ const SocialMediaLinks = () => {
         <StyledLinkButton
           variant="icon"
           href="https://www.linkedin.com/in/andreylyamkin/"
-          aria-label="GitHub"
+          aria-label="LinkedIn"
         >
           <FaLinkedin size={24} />
         </StyledLinkButton>
@@ -17,7 +17,7 @@ const SocialMediaLinks = () => {
         <StyledLinkButton
           variant="icon"
           href="https://github.com/alyamkin"
-          aria-label="LinkedIn"
+          aria-label="Github"
         >
           <FaGithubSquare size={24} />
         </StyledLinkButton>
