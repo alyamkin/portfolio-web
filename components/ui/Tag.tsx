@@ -15,8 +15,10 @@ const tagStyles = cva(
   {
     variants: {
       variant: {
-        general: 'bg-surface-base text-text-secondary  hover:bg-surface-hover',
-        accent: 'bg-accent-soft text-text-accent  hover:bg-accent-soft-hover',
+        general:
+          'bg-surface-base text-text-secondary hover:bg-surface-hover rounded-md',
+        accent:
+          'bg-accent-soft text-text-accent hover:bg-accent-soft-hover rounded-md',
         completed: 'bg-status-success-soft text-text-success rounded-full',
         inProgress: 'bg-accent-soft text-text-accent rounded-full',
       },
