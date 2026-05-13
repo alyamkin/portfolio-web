@@ -1,6 +1,7 @@
+'use client';
 import { forwardRef } from 'react';
 
-type ButtonProps = {
+export type ButtonProps = {
   children?: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 

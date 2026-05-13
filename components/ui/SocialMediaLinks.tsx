@@ -1,9 +1,13 @@
+import clsx from 'clsx';
 import StyledLinkButton from '@/components/ui/buttons/StyledLinkButton';
 import { FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 
-const SocialMediaLinks = () => {
+const SocialMediaLinks = ({ className }: { className?: string }) => {
   return (
-    <ul aria-label="Social media" className="flex gap-2 items-center">
+    <ul
+      aria-label="Social media"
+      className={clsx('flex gap-2 items-center', className)}
+    >
       <li>
         <StyledLinkButton
           variant="icon"
