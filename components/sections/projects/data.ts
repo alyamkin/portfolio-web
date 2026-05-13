@@ -10,7 +10,7 @@ const projects: ProjectCard[] = [
     tags: [
       { label: 'Full Stack', variant: 'accent' },
       { label: 'Next.js', variant: 'general' },
-      { label: 'Postgress', variant: 'general' },
+      { label: 'Postgres', variant: 'general' },
       { label: 'Typescript', variant: 'general' },
       { label: 'Claude Code', variant: 'accent' },
       { label: 'React', variant: 'general' },
