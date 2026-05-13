@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import SectionWrapper from '@/components/sections/SectionWrapper';
-import Tag from '@/components/ui/Tag';
+import Tag from '@/components/ui/tags/Tag';
 import skills from './data';
 
 const Skills = () => {

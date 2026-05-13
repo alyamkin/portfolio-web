@@ -1,4 +1,4 @@
-import { TagVariant } from '@/components/ui/Tag';
+import { TagVariant } from '@/components/ui/tags/variants';
 
 export type SkillTag = {
   label: string;

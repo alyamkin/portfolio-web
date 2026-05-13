@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FaFigma, FaGithubSquare } from 'react-icons/fa';
 
-import Tag from '@/components/ui/Tag';
+import Tag from '@/components/ui/tags/Tag';
 import StyledLinkButton from '@/components/ui/buttons/StyledLinkButton';
 import { type ProjectCard } from './types';
 

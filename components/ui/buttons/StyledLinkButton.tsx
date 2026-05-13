@@ -1,7 +1,8 @@
+import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import LinkButton, { LinkButtonProps } from './LinkButton';
-import { getButtonClasses, ButtonVariants } from './getButtonClasses';
+import { buttonStyles, ButtonVariants } from './variants';
 
 type StyledLinkButtonProps = LinkButtonProps & {
   variant?: ButtonVariants;
@@ -13,7 +14,7 @@ const StyledLinkButton = forwardRef<HTMLAnchorElement, StyledLinkButtonProps>(
     return (
       <LinkButton
         ref={ref}
-        className={getButtonClasses(variant, disabled, className)}
+        className={clsx(buttonStyles({ variant, disabled }), className)}
         aria-disabled={disabled}
         {...rest}
       />

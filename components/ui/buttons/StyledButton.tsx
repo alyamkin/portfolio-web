@@ -1,9 +1,8 @@
-'use client';
-
 import { forwardRef } from 'react';
+import clsx from 'clsx';
 
 import Button, { ButtonProps } from './Button';
-import { getButtonClasses, ButtonVariants } from './getButtonClasses';
+import { buttonStyles, ButtonVariants } from './variants';
 
 type StyledButtonProps = ButtonProps & {
   variant?: ButtonVariants;
@@ -15,7 +14,7 @@ const StyledButton = forwardRef<HTMLButtonElement, StyledButtonProps>(
     return (
       <Button
         ref={ref}
-        className={getButtonClasses(variant, disabled, className)}
+        className={clsx(buttonStyles({ variant, disabled }), className)}
         aria-disabled={disabled}
         {...rest}
       />

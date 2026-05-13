@@ -1,9 +1,8 @@
 import { cva } from 'class-variance-authority';
-import clsx from 'clsx';
 
 export type ButtonVariants = 'primary' | 'secondary' | 'icon';
 
-const buttonStyles = cva(
+export const buttonStyles = cva(
   `
     inline-flex items-center justify-center
     rounded-lg
@@ -95,11 +94,3 @@ const buttonStyles = cva(
     },
   },
 );
-
-export function getButtonClasses(
-  variant: ButtonVariants,
-  disabled = false,
-  className?: string,
-) {
-  return clsx(buttonStyles({ variant, disabled }), className);
-}
