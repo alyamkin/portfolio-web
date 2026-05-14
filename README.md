@@ -28,11 +28,11 @@ Personal portfolio website built with Next.js and Tailwind CSS to showcase proje
 
 ### Desktop
 
-![Desktop Screenshot](./public/screenshots/desktop.png)
+![Desktop Screenshot](./public/screenshots/desktop.jpg)
 
 ### Mobile
 
-![Mobile Screenshot](./public/screenshots/mobile.png)
+![Mobile Screenshot](./public/screenshots/mobile.jpg)
 
 ## Getting Started
 
