@@ -14,7 +14,7 @@ const SocialMediaLinks = ({ className }: { className?: string }) => {
           href="https://www.linkedin.com/in/andreylyamkin/"
           aria-label="LinkedIn"
         >
-          <FaLinkedin size={24} />
+          <FaLinkedin size={32} />
         </StyledLinkButton>
       </li>
       <li>
@@ -23,7 +23,7 @@ const SocialMediaLinks = ({ className }: { className?: string }) => {
           href="https://github.com/alyamkin"
           aria-label="Github"
         >
-          <FaGithubSquare size={24} />
+          <FaGithubSquare size={32} />
         </StyledLinkButton>
       </li>
     </ul>

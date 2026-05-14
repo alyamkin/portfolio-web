@@ -1,5 +1,5 @@
 import SectionWrapper from './SectionWrapper';
-import StyledLinkButton from '../ui/buttons/StyledLinkButton';
+import StyledLinkButton from '@/components/ui/buttons/StyledLinkButton';
 import SocialMediaLinks from '@/components/ui/SocialMediaLinks';
 
 const Contacts = () => {

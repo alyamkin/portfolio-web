@@ -15,13 +15,6 @@ const Hero = () => {
             <StyledLinkButton variant="primary" href="#projects">
               View Projects
             </StyledLinkButton>
-            {/* <StyledLinkButton
-              variant="secondary"
-              href="/assets/resume.pdf"
-              download="Andrey-Lyamkin-Resume.pdf"
-            >
-              Download Resume
-            </StyledLinkButton> */}
           </div>
         </header>
 
