@@ -30,19 +30,19 @@ const Hero = () => (
 
       <div
         className={clsx(
-          'relative mx-auto w-full max-w-99',
-          'before:absolute before:inset-[4%_6%_8%] before:rounded-full before:bg-[radial-gradient(closest-side,var(--halo)_62%,transparent)]',
-          'dark:aspect-square dark:max-w-84 dark:overflow-hidden dark:rounded-full dark:bg-(--halo) dark:ring-2 dark:ring-accent/50 dark:ring-offset-6 dark:ring-offset-bg dark:before:hidden',
+          'relative mx-auto aspect-square w-full max-w-92 overflow-hidden rounded-full bg-accent-soft',
+          'ring-2 ring-accent/40 ring-offset-6 ring-offset-bg shadow-card',
         )}
       >
         <Image
           src={portrait}
-          alt="Pencil-style portrait of Andrey Lyamkin"
-          sizes="(min-width: 448px) 396px, calc(100vw - 2rem)"
-          quality={60}
+          alt="Portrait of Andrey Lyamkin"
+          placeholder="blur"
+          sizes="(min-width: 400px) 368px, calc(100vw - 2rem)"
+          quality={95}
           loading="eager"
           fetchPriority="high"
-          className="relative h-auto w-full [mask-image:radial-gradient(closest-side_at_50%_52%,#000_72%,transparent)] dark:mask-none dark:brightness-90"
+          className="size-full object-cover dark:brightness-95"
         />
       </div>
     </div>
