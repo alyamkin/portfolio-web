@@ -4,7 +4,7 @@ Personal portfolio of Andrey Lyamkin, a software developer. A fast, accessible o
 
 ## Live Demo
 
-🌐 https://alyamkin.ca
+🌐 https://www.alyamkin.ca
 
 ## Features
 
