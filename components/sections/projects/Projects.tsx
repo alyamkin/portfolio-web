@@ -1,21 +1,21 @@
-import SectionWrapper from '@/components/sections/SectionWrapper';
+import Section from '@/components/ui/Section';
+import { projects } from '@/content/projects';
 import ProjectCard from './ProjectCard';
-import projects from './data';
 
-const Projects = () => {
-  return (
-    <SectionWrapper
-      id="projects"
-      title="Projects"
-      subtitle="A selection of projects I've built recently"
-    >
-      <div className="grid grid-cols-1 gap-4 tablet:grid-cols-2 tablet:gap-6 laptop:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard key={project.key} project={project} />
-        ))}
-      </div>
-    </SectionWrapper>
-  );
-};
+const Projects = () => (
+  <Section
+    id="work"
+    title="Projects"
+    description="Personal projects I've designed and built."
+  >
+    <ul role="list" className="grid gap-7 md:grid-cols-2">
+      {projects.map((project) => (
+        <li key={project.slug}>
+          <ProjectCard project={project} />
+        </li>
+      ))}
+    </ul>
+  </Section>
+);
 
 export default Projects;
