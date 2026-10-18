@@ -68,7 +68,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         src={image.src}
         alt={image.alt}
         sizes="(min-width: 1216px) 422px, (min-width: 1024px) calc((100vw - 372px) / 2), (min-width: 768px) calc((100vw - 76px) / 2), 100vw"
-        quality={95}
+        quality={75}
         placeholder="blur"
         className="aspect-7/5 w-full border-b border-line object-cover"
       />
