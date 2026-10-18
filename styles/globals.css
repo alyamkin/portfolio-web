@@ -1,120 +1,124 @@
 @import 'tailwindcss';
 
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#f3f5f2, #0d1412);
+  --surface: light-dark(#ffffff, #141d1a);
+  --ink: light-dark(#14211e, #e3ebe7);
+  --muted: light-dark(#56645f, #98a7a2);
+  --line: light-dark(#dae0dc, #25312d);
+  --accent: light-dark(#1d6555, #6cc7ae);
+  --accent-ink: light-dark(#ffffff, #0d1412);
+  --accent-soft: light-dark(#e2eee9, #15302a);
+  --amber: light-dark(#8a5210, #e5a75c);
+  --amber-soft: light-dark(#f6ebdc, #2e2416);
+  --halo: light-dark(#ffffff, #e4ebe7);
+  --band: light-dark(#14211e, #17241f);
+  --band-ink: #eef3f0;
+  --band-muted: #a7b6b1;
+  --band-accent: #7fd3bb;
+  --shadow-color: light-dark(#14211e, #000000);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 @theme inline {
-  /* Fonts */
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, 'SF Mono', Menlo, monospace;
 
-  /* Colors */
-  --color-background-base: #f7f7f5;
-  --color-surface-base: #ecece8;
-  --color-surface-hover: #e6e6e3;
-  --color-surface-active: #d1d1cd;
-  --color-surface-disabled: #f3f3f0;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+  --color-band-muted: var(--band-muted);
+  --color-band-accent: var(--band-accent);
 
-  --color-accent-base: #4c6ef5;
-  --color-accent-hover: #3b5bdb;
-  --color-accent-active: #365fc7;
-  --color-accent-disabled: #c7d6fb;
-  --color-accent-soft: #e7edff;
-  --color-accent-soft-hover: #dde6ff;
+  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.25rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(2rem, 1.4rem + 2.2vw, 3rem);
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.5;
 
-  --color-text-primary: #1c1c1c;
-  --color-text-secondary: #6b6b6b;
-  --color-text-muted: #9a9a9a;
-  --color-text-disabled: #6b6b6b;
-  --color-text-accent: #3b5bdb;
-  --color-text-disabled-accent: #f8faff;
-  --color-text-success: #2f7a4e;
-
-  --color-border-base: #d1d1cd;
-  --color-border-disabled: #e6e6e3;
-  --color-border-hover: #c7c7c2;
-  --color-border-light: #ecece8;
-
-  --color-status-success-soft: #e8f5ee;
-
-  /* Headings */
-  --text-h1: 76px;
-  --text-h1--line-height: 1.1;
-  --text-h1--font-weight: 500;
-
-  --text-h2: 60px;
-  --text-h2--line-height: 1.1;
-  --text-h2--font-weight: 500;
-
-  --text-h3: 48px;
-  --text-h3--line-height: 1.1;
-  --text-h3--font-weight: 500;
-
-  --text-h4: 38px;
-  --text-h4--line-height: 1.1;
-  --text-h4--font-weight: 500;
-
-  --text-h5: 36px;
-  --text-h5--line-height: 1.1;
-  --text-h5--font-weight: 500;
-
-  --text-h6: 24px;
-  --text-h6--line-height: 1.2;
-  --text-h6--font-weight: 500;
-
-  /* Body */
-  --text-body-lg: 20px;
-  --text-body-lg--line-height: 1.5;
-  --text-body-lg--letter-spacing: 0.25px;
-
-  --text-body: 16px;
-  --text-body--line-height: 1.5;
-  --text-body--letter-spacing: 0.25px;
-
-  --text-body-sm: 14px;
-  --text-body-sm--line-height: 1.7;
-  --text-body-sm--letter-spacing: 0.5px;
-
-  /* Labels */
-  --text-label: 16px;
-  --text-label--line-height: 1.5;
-  --text-label--letter-spacing: 0.75px;
-
-  --text-label-sm: 14px;
-  --text-label-sm--line-height: 1.7;
-  --text-label-sm--letter-spacing: 0.5px;
-
-  /* Caption */
-  --text-caption-lg: 13px;
-  --text-caption-lg--line-height: 1.7;
-  --text-caption-lg--letter-spacing: 0.5px;
-
-  --text-caption: 12px;
-  --text-caption--line-height: 1.7;
-  --text-caption--letter-spacing: 0.5px;
-
-  /* Breakpoints */
-  --breakpoint-*: initial;
-  --breakpoint-tablet: 40rem; /* 640px */
-  --breakpoint-laptop: 60rem; /* 960px */
-
-  /* Container */
-  --container-max-width: 90rem; /* 1440px */
-  --spacing-page-tablet: 1rem;
-  --spacing-page-laptop: 1.5rem;
-
-  /* Shadows */
-  --shadow-card: 0 2px 10px 0 rgb(28 28 28 / 0.06);
-  --shadow-card-hover: 0 6px 18px 0 rgb(28 28 28 / 0.1);
-  --shadow-mobile-menu: 0 8px 24px 0 rgb(28 28 28 / 0.06);
+  --shadow-card:
+    0 1px 2px color-mix(in srgb, var(--shadow-color) 5%, transparent),
+    0 8px 24px -12px color-mix(in srgb, var(--shadow-color) 18%, transparent);
 }
 
 @utility container {
-  max-width: var(--container-max-width);
+  width: 100%;
+  max-width: 76rem;
   margin-inline: auto;
-  padding-inline: var(--spacing-page-tablet);
+  padding-inline: 1rem;
 
-  @media (min-width: 40rem) {
-    padding-inline: var(--spacing-page-laptop);
+  @media (min-width: 48rem) {
+    padding-inline: 1.5rem;
   }
 }
 
-.focus-ring {
-  @apply outline-none focus-visible:ring-2 focus-visible:ring-accent-base focus-visible:ring-offset-2 rounded;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
 }

@@ -1,15 +1,24 @@
+import About from '@/components/sections/About';
+import Contact from '@/components/sections/Contact';
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/projects/Projects';
-import Skills from '@/components/sections/skills/Skills';
-import Contacts from '@/components/sections/Contacts';
+import Skills from '@/components/sections/Skills';
+import { getStructuredData, serializeJsonLd } from '@/lib/structured-data';
 
 export default function Page() {
   return (
-    <main className="flex flex-1 flex-col gap-12 tablet:gap-16 laptop:gap-30">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(getStructuredData()),
+        }}
+      />
       <Hero />
+      <About />
       <Projects />
       <Skills />
-      <Contacts />
-    </main>
+      <Contact />
+    </>
   );
 }

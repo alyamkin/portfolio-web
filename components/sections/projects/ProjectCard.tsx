@@ -1,70 +1,119 @@
 import Image from 'next/image';
-import { FaFigma, FaGithubSquare } from 'react-icons/fa';
+import { FiArrowUpRight, FiClock } from 'react-icons/fi';
 
-import Tag from '@/components/ui/tags/Tag';
-import StyledLinkButton from '@/components/ui/buttons/StyledLinkButton';
-import { type ProjectCard } from './types';
+import placeholderImage from '@/assets/images/project-placeholder.webp';
+import ButtonLink from '@/components/ui/ButtonLink';
+import StatusBadge from '@/components/ui/StatusBadge';
+import type { Project, ProjectImage } from '@/content/types';
+import { formatIsoDate } from '@/lib/date';
 
-type Props = {
-  project: ProjectCard;
-};
+const ProjectLinks = ({ title, links }: Pick<Project, 'title' | 'links'>) => {
+  const { demo, github, figma } = links;
 
-const ProjectCard = ({ project }: Props) => {
-  const { title, description, image, tags, demo, github, figma, status } =
-    project;
+  if (!demo && !github && !figma) {
+    return (
+      <p className="flex items-center gap-2 text-[0.9rem] text-muted">
+        <FiClock aria-hidden="true" className="size-4" />
+        Demo and source coming soon
+      </p>
+    );
+  }
+
+  const items = [
+    demo && { href: demo, label: 'Live demo' },
+    github && { href: github, label: 'View code' },
+    figma && { href: figma, label: 'Figma' },
+  ].filter((item) => !!item);
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-xl border border-border-light bg-white shadow-card transition-shadow duration-300 hover:shadow-card-hover">
-      <div className="relative">
-        <Image src={image} alt={`${title} image`} width={640} height={360} />
-        <div className="absolute top-3 right-3">
-          <Tag variant={status.id}>{status.label}</Tag>
-        </div>
-      </div>
+    <div className="flex flex-wrap gap-2">
+      {items.map(({ href, label }, index) => (
+        <ButtonLink
+          key={href}
+          href={href}
+          size="sm"
+          variant={index === 0 ? 'primary' : 'secondary'}
+        >
+          {label}
+          <span className="sr-only"> for {title}</span>
+          {index === 0 && (
+            <FiArrowUpRight aria-hidden="true" className="size-4" />
+          )}
+        </ButtonLink>
+      ))}
+    </div>
+  );
+};
 
-      <div className="flex flex-1 flex-col p-4">
-        <div className="space-y-2">
-          <h3 className="text-body font-medium text-text-primary">{title}</h3>
+const placeholder: ProjectImage = {
+  src: placeholderImage,
+  alt: 'Illustration of a developer at a desk. Screenshot coming soon.',
+};
 
-          <p className="text-body-sm text-text-secondary">{description}</p>
+const ProjectCard = ({ project }: { project: Project }) => {
+  const {
+    title,
+    description,
+    image = placeholder,
+    status,
+    date,
+    categories,
+    stack,
+    links,
+  } = project;
 
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <Tag key={tag.label} variant={tag.variant}>
-                {tag.label}
-              </Tag>
+  return (
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        sizes="(min-width: 1216px) 422px, (min-width: 1024px) calc((100vw - 372px) / 2), (min-width: 768px) calc((100vw - 76px) / 2), 100vw"
+        quality={95}
+        placeholder="blur"
+        className="aspect-7/5 w-full border-b border-line object-cover"
+      />
+
+      <div className="flex flex-1 flex-col gap-3.5 p-5 md:p-6">
+        <dl className="flex flex-wrap items-center gap-2.5 font-mono text-[0.8rem] text-muted tabular-nums">
+          <dt className="sr-only">Status</dt>
+          <dd>
+            <StatusBadge status={status} />
+          </dd>
+          <dt className="sr-only">Date</dt>
+          <dd>
+            <time dateTime={date}>{formatIsoDate(date)}</time>
+          </dd>
+          <dt className="sr-only">Type</dt>
+          <dd className="flex flex-wrap gap-2.5">
+            {categories.map((category, index) => (
+              <span key={category}>
+                {index > 0 && <span className="sr-only">, </span>}
+                {category}
+              </span>
             ))}
-          </div>
-        </div>
+          </dd>
+        </dl>
 
-        <div className="mt-auto flex items-center pt-6">
-          {demo && <StyledLinkButton href={demo}>Live Demo</StyledLinkButton>}
+        <h3 className="text-h3">{title}</h3>
 
-          <ul className="ml-auto flex items-center gap-2">
-            {github && (
-              <li>
-                <StyledLinkButton
-                  variant="icon"
-                  href={github}
-                  aria-label="Github"
-                >
-                  <FaGithubSquare size={24} />
-                </StyledLinkButton>
+        <p className="text-muted">{description}</p>
+
+        <div className="mt-auto flex flex-col gap-4 pt-1">
+          <ul
+            role="list"
+            aria-label="Built with"
+            className="flex flex-wrap gap-1.5"
+          >
+            {stack.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-md bg-bg px-2.5 py-1 text-[0.82rem] font-medium text-muted"
+              >
+                {tech}
               </li>
-            )}
-
-            {figma && (
-              <li>
-                <StyledLinkButton
-                  variant="icon"
-                  href={figma}
-                  aria-label="Figma"
-                >
-                  <FaFigma size={24} />
-                </StyledLinkButton>
-              </li>
-            )}
+            ))}
           </ul>
+          <ProjectLinks title={title} links={links} />
         </div>
       </div>
     </article>
