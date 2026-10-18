@@ -39,7 +39,7 @@ const Hero = () => (
           alt="Portrait of Andrey Lyamkin"
           placeholder="blur"
           sizes="(min-width: 400px) 368px, calc(100vw - 2rem)"
-          quality={95}
+          quality={75}
           loading="eager"
           fetchPriority="high"
           className="size-full object-cover dark:brightness-95"

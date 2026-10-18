@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Andrey Lyamkin',
   jobTitle: 'Software Developer',
-  url: 'https://alyamkin.ca',
+  url: 'https://www.alyamkin.ca',
   title: 'Andrey Lyamkin | Software Developer',
   description:
     'Andrey Lyamkin is a software developer who builds fast, accessible web applications with React, Next.js and TypeScript, and ships faster with AI-assisted development.',
