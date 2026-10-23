@@ -1,7 +1,34 @@
 import claudeChatbotImage from '@/assets/images/projects/claude-chatbot.webp';
+import superSimpleBudgetImage from '@/assets/images/projects/super-simple-budget.webp';
 import type { Project } from './types';
 
 export const projects: Project[] = [
+  {
+    slug: 'super-simple-budget',
+    title: 'Super Simple Budget',
+    description:
+      'Private, bilingual monthly budget planner. Tap what you pay for, enter amounts at any frequency, and compare your plan with usual Canadian spending ranges. No sign-up, and data never leaves the browser.',
+    image: {
+      src: superSimpleBudgetImage,
+      alt: 'Super Simple Budget: the results page showing the money left each month, where the income goes, the biggest expenses, and the plan summary',
+    },
+    status: 'completed',
+    date: '2026-10',
+    categories: ['Frontend'],
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+      'Tailwind CSS',
+      'Recharts',
+      'Jest',
+    ],
+    links: {
+      demo: 'https://super-simple-budget.vercel.app/',
+      github: 'https://github.com/alyamkin/super-simple-budget',
+    },
+  },
   {
     slug: 'play-with-claude-chatbot',
     title: 'Play with Claude Chatbot',
@@ -20,20 +47,21 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'budget-app',
-    title: 'Budget App',
+    slug: 'battleship',
+    title: 'Battleship',
     description:
-      'Budget manager for tracking income, expenses, and savings. It reviews your spending and suggests where to adjust.',
+      'Real-time two-player Battleship. Create a private room, share the link, place your fleet, and play with no account. A server-authoritative game engine keeps every move fair.',
     status: 'inProgress',
     date: '2026',
     categories: ['Full stack'],
     stack: [
-      'Next.js',
       'React',
       'TypeScript',
-      'Postgres',
+      'Node.js',
+      'Express',
+      'Socket.IO',
+      'Zustand',
       'Tailwind CSS',
-      'Claude Code',
     ],
     links: {},
   },
